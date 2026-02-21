@@ -4,7 +4,7 @@ hvac==2.3.0
 jsonpatch==1.33
 krb5==0.7.1
 gssapi==1.9.0
-cryptography==43.0.3
+cryptography==46.0.5
 requests==2.32.3
 charset-normalizer==3.4.2
 Jinja2==3.1.6
