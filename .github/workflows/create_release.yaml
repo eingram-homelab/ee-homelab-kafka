@@ -1,0 +1,31 @@
+name: Create Release on Merge
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract version from PR
+        id: version
+        run: |
+          TITLE="${{ github.event.pull_request.TITLE }}"
+          VERSION=$(echo "$TITLE" | grep -oP 'Release-v\K[0-9]+\.[0-9]+\.[0-9]+')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Create Git tag
+        run: |
+          git tag v${{ steps.version.outputs.version }}
+          git push origin v${{ steps.version.outputs.version }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
