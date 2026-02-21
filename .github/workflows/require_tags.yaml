@@ -8,11 +8,12 @@ jobs:
   validate-semver:
     runs-on: ubuntu-latest
     steps:
-      - name: Validate SemVer in PR description
+      - name: Validate SemVer in PR title
         run: |
-          BODY="${{ github.event.pull_request.body }}"
+          TITLE="${{ github.event.pull_request.title }}"
 
-          if [[ ! "$BODY" =~ Release-v([0-9]+)\.([0-9]+)\.([0-9]+)$ ]]; then
-            echo "PR must contain: Release-vX.Y.Z (valid semantic version)"
+          # Require a semantic version token like Release-vX.Y.Z somewhere in the title
+          if [[ ! "$TITLE" =~ Release-v([0-9]+)\.([0-9]+)\.([0-9]+) ]]; then
+            echo "PR title must contain: Release-vX.Y.Z (valid semantic version)"
             exit 1
           fi
