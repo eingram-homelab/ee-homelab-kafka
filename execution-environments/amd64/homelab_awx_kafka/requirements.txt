@@ -1,0 +1,28 @@
+# Virtual environment contents:
+pyvmomi==9.0.0.0
+hvac==2.3.0
+jsonpatch==1.33
+krb5==0.7.1
+gssapi==1.9.0
+cryptography==43.0.3
+requests==2.32.3
+charset-normalizer==3.4.2
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+psutil==7.0.0
+pycparser==2.22
+pyparsing==3.2.3
+# PyYAML==6.0.1
+resolvelib==1.0.1
+# six==1.17.0
+# urllib3==1.26.16
+# botocore==1.31.51
+awxkit==24.6.1
+psycopg2-binary==2.9.10
+kubernetes==32.0.1
+google-auth==2.40.1
+google-cloud-storage==3.1.0
+pypsrp==0.8.1
+confluent-kafka==2.11.1
+passlib==1.7.4
+pyOpenSSL==24.2.1
