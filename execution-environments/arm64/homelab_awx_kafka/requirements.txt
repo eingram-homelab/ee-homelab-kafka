@@ -1,5 +1,6 @@
 # Virtual environment contents:
-pyvmomi>=9.0.0.0
+# pyvmomi>=9.0.0.0
+vcf-sdk>-9.0.0.0
 hvac>=2.3.0
 jsonpatch==1.33
 krb5>=0.7.1
