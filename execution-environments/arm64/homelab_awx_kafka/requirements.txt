@@ -1,11 +1,11 @@
 # Virtual environment contents:
-pyvmomi==9.0.0.0
-hvac==2.3.0
+# pyvmomi=8.0.3.0.1
+hvac>=2.3.0
 jsonpatch==1.33
-krb5==0.7.1
+krb5>=0.7.1
 gssapi==1.9.0
-cryptography==46.0.5
-requests==2.32.3
+cryptography>=46.0.5
+requests>=2.32.4
 charset-normalizer==3.4.2
 Jinja2==3.1.6
 MarkupSafe==3.0.2
@@ -14,12 +14,11 @@ pycparser==2.22
 pyparsing==3.2.3
 resolvelib==1.0.1
 awxkit==24.6.1
-psycopg2-binary==2.9.10
-kubernetes==32.0.1
+psycopg2-binary==2.9.11
+kubernetes>=32.0.1
 google-auth==2.40.1
 google-cloud-storage==3.1.0
-pypsrp==0.8.1
-confluent-kafka==2.11.1
+pypsrp>=0.8.1
+confluent-kafka>=2.11.1
 passlib==1.7.4
-pyOpenSSL==24.2.1
-requests>=2.32.4
+pyOpenSSL<24.3.0

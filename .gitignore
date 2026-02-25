@@ -54,3 +54,6 @@ Containerfile
 
 /.ansible
 /.vscode
+
+# Ignore build folders
+context
