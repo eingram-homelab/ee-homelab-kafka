@@ -15,25 +15,24 @@ dependencies:
 
 images:
   base_image:
-    name: quay.io/fedora/fedora:41
+    name: quay.io/fedora/fedora:44
 
-# additional_build_files:
-#     - src: files/ansible.cfg
-#       dest: configs
+additional_build_files:
+- src: files/ca.crt
+  dest: configs
 
 additional_build_steps:
   prepend_base:
-  - ENV ANSIBLE_CALLBACKS_ENABLED=eingram23.homelab.kafka
   - RUN dnf install -y python3 python3-pip python3-libdnf5
 
-  prepend_final: |
-    RUN whoami
-    RUN cat /etc/os-release
+  prepend_final:
+  - RUN whoami
+  - RUN cat /etc/os-release
   append_final:
   # - RUN dnf install -y yum-utils
   # - RUN yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
   # - RUN dnf install -y terraform
-  - ADD ca.crt /etc/pki/ca-trust/source/anchors/ca.crt
+  - ADD _build/configs/ca.crt /etc/pki/ca-trust/source/anchors/ca.crt
   - RUN update-ca-trust
   - RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
   - RUN mv ./kubectl /usr/local/bin
