@@ -14,7 +14,7 @@ pycparser==2.22
 pyparsing==3.2.3
 resolvelib==1.0.1
 awxkit==24.6.1
-psycopg2-binary==2.9.10
+psycopg2-binary==2.9.11
 kubernetes>=32.0.1
 google-auth==2.40.1
 google-cloud-storage==3.1.0
@@ -22,5 +22,3 @@ pypsrp>=0.8.1
 confluent-kafka>=2.11.1
 passlib==1.7.4
 pyOpenSSL<24.3.0
-git+https://github.com/vmware/vsphere-automation-sdk-python.git
-
